@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body{
+    margin: 0;
+    padding: 0;
+    background:#161616;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+}
+body::before{
+    content: "";
+    position: absolute;
+    background: #e71e2a;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(60% at right -20%);
+    z-index: 1;
+    animation: screen 3s forwards ease;
+
+}
+@keyframes screen{
+  0%{
+    clip-path: circle(200% at center);
+    z-index:-1;
+   background: black;
+  }
+}
+/* 必須先設定寬高為100%，才寫clip-path:
+    width: 100%;
+    height: 100%;
+    clip-path: circle(60% at right -20%);*/
+
+#logo{
+    position:absolute;
+    margin:30px 70px;
+
+}
+
+nav{
+    position: absolute;
+    display: flex;
+    right:0px;
+    font-size: 25px;
+    margin: 35px 70px;
+    z-index: 1;
+}
+nav h5{
+    margin-right:30px;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    color:black;
+}
+nav h5:hover{
+  color:white;
+}
+.main{
+  width:100%;
+  height:100%;
+  position:absolute;
+}
+
+.text{
+  position: absolute;
+  width:40%;
+  height:auto;
+  display: block;
+  top:35%;
+  left:70px;
+  color: aliceblue;
+}
+#title{
+  width:500px; 
+  height:70px;
+  overflow: hidden;
+  animation: text 4s steps(40) 1s normal both; 
+  height:auto;
+  font-family: 'Coda', cursive;
+  font-size: 50px;
+  position: relative;
+  white-space: nowrap;
+}
+/*white-space: nowrap; used in typewritter
+強制不換行*/
+@keyframes text{
+  from{
+    width: 0;
+  }
+  to{
+    width:500px;
+   
+  }
+}
+.text p{
+  width:70%;
+  font-family: 'Roboto', sans-serif;
+
+}
+.text button{
+  width:120px;
+  height:45px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  background: #e71e2a;
+  color: aliceblue;
+  border: none;
+  box-shadow: 0px 5px 10px #ff0414;
+  margin-top: 20px;
+}
+
+/*swipper*/
+.swiper-container {
+  width:500px;
+  margin: 0;
+  padding: 0;
+
+  position:absolute;
+  top:15%;
+  right:100px;
+  height:450px;
+ 
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 135px;
+  margin: 0 30px;
+  bottom: 0px;
+
+  z-index:10000;
+
+
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom:0px;
+
+}
+.swiper-wrapper{
+  position: absolute;
+  left:10%;
+}
+:root {
+  --swiper-theme-color: none;
+  --swiper-navigation-size: 0px;
+  
+}
+
+  /*social*/
+  .social{
+    display: flex;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 30px;
+    left:70px;
+  }
+  .social div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:45px;
+    height:45px;
+    border-radius: 50%;
+    background: rgba(216, 202, 202, 0.1);
+    margin-right: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  .social img{
+    transform: scale(0.6);
+    filter: invert(1);
+
+  }
+ .social div:hover{
+    background: #e71e2a;
+    transform: scale(1.1);
+  }
